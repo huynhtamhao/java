@@ -1,18 +1,18 @@
-package com.cleancode.testtruocthoinha.externalsystem;
+package com.cleancode.bridepattern.testtruocthoinha.externalsystem;
 
 
 import com.cleancode.common.utils.MessageUtil;
-import com.cleancode.testtruocthoinha.httpmethod.ExternalMethodTest;
+import com.cleancode.bridepattern.testtruocthoinha.httpmethod.ExternalMethodTest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class IJKSystemTest implements ExternalMethodTest {
+public class ABCSystemTest implements ExternalMethodTest {
 
-    @Value("${ikj.ip:localhost}")
+    @Value("${abc.ip:localhost}")
     private String hostName;
 
-    @Value("${ikj.port:8082}")
+    @Value("${abc.port:8082}")
     private String hostPort;
 
     @Override

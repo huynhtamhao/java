@@ -1,12 +1,12 @@
-package com.cleancode.testtruocthoinha.httpmethod;
+package com.cleancode.bridepattern.testtruocthoinha.httpmethod;
 
-public class DefaultPropertiesMethodTest {
+public abstract class DefaultMethodTest implements MethodTest {
 
     protected String hostName;
     protected String hostPort;
     protected String connectionErrorMessage;
 
-    DefaultPropertiesMethodTest(String hostName, String hostPort, String connectionErrorMessage) {
+    DefaultMethodTest(String hostName, String hostPort, String connectionErrorMessage) {
         this.hostName = hostName;
         this.hostPort = hostPort;
         this.connectionErrorMessage = connectionErrorMessage;

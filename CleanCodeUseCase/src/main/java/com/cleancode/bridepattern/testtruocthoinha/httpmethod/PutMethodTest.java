@@ -1,4 +1,4 @@
-package com.cleancode.testtruocthoinha.httpmethod;
+package com.cleancode.bridepattern.testtruocthoinha.httpmethod;
 
 import com.cleancode.common.constants.Constants;
 import com.cleancode.common.errors.LogicException;
@@ -13,9 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-public class PutMethodTestImpl extends DefaultPropertiesMethodTest implements PutMethodTest {
+public class PutMethodTest extends DefaultMethodTest {
 
-    PutMethodTestImpl(String hostName, String hostPort, String connectionErrorMessage) {
+    PutMethodTest(String hostName, String hostPort, String connectionErrorMessage) {
         super(hostName, hostPort, connectionErrorMessage);
     }
 
@@ -23,14 +23,14 @@ public class PutMethodTestImpl extends DefaultPropertiesMethodTest implements Pu
     private RestTemplate restTemplate;
 
     @Override
-    public <T> T putResultObject(String apiName,
-        ParameterizedTypeReference<Map<String, T>> responseType, Object body,
-        Map<String, Object> params, String... pathSegment) throws LogicException {
+    public <T> T resultObject(String apiName, ParameterizedTypeReference<Map<String, T>> responseType, T body,
+                                Map<String, Object> params, String... pathSegment) throws LogicException {
+
         HttpEntity<Object> requestEntity = new HttpEntity<>(body);
-        URI uri = URIBuilderUtils
-            .getUri(this.hostName, this.hostPort, apiName, params, pathSegment);
-        ResponseEntity<Map<String, T>> response = restTemplate
-            .exchange(uri, HttpMethod.PUT, requestEntity, responseType);
+        URI uri = URIBuilderUtils.getUri(this.hostName, this.hostPort, apiName, params, pathSegment);
+
+        ResponseEntity<Map<String, T>> response = restTemplate.exchange(uri, HttpMethod.PUT, requestEntity, responseType);
+
         // Check response status
         if (response.getStatusCodeValue() != HttpStatus.OK.value()) {
             throw new LogicException(this.connectionErrorMessage);

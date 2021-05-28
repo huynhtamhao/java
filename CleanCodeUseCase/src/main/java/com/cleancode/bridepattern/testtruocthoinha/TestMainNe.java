@@ -1,4 +1,4 @@
-package com.cleancode.testtruocthoinha;
+package com.cleancode.bridepattern.testtruocthoinha;
 
 public class TestMainNe {
 

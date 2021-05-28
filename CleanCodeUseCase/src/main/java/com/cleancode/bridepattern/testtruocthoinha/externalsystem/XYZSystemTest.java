@@ -1,7 +1,7 @@
-package com.cleancode.testtruocthoinha.externalsystem;
+package com.cleancode.bridepattern.testtruocthoinha.externalsystem;
 
 import com.cleancode.common.utils.MessageUtil;
-import com.cleancode.testtruocthoinha.httpmethod.ExternalMethodTest;
+import com.cleancode.bridepattern.testtruocthoinha.httpmethod.ExternalMethodTest;
 import org.springframework.beans.factory.annotation.Value;
 
 public class XYZSystemTest implements ExternalMethodTest {
