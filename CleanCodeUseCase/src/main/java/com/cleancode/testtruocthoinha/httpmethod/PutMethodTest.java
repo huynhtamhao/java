@@ -1,4 +1,4 @@
-package com.cleancode.testtruocthoinha;
+package com.cleancode.testtruocthoinha.httpmethod;
 
 
 import com.cleancode.common.errors.LogicException;

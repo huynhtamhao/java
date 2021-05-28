@@ -1,4 +1,4 @@
-package com.cleancode.testtruocthoinha;
+package com.cleancode.testtruocthoinha.httpmethod;
 
 import com.cleancode.common.constants.Constants;
 import com.cleancode.common.errors.LogicException;
@@ -13,16 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-public class PutMethodTestImpl implements PutMethodTest {
-
-    private final String hostName;
-    private final String hostPort;
-    private final String connectionErrorMessage;
+public class PutMethodTestImpl extends DefaultPropertiesMethodTest implements PutMethodTest {
 
     PutMethodTestImpl(String hostName, String hostPort, String connectionErrorMessage) {
-        this.hostName = hostName;
-        this.hostPort = hostPort;
-        this.connectionErrorMessage = connectionErrorMessage;
+        super(hostName, hostPort, connectionErrorMessage);
     }
 
     @Autowired

@@ -1,18 +1,19 @@
-package com.cleancode.testtruocthoinha;
+package com.cleancode.testtruocthoinha.externalsystem;
 
 
 import com.cleancode.common.utils.MessageUtil;
+import com.cleancode.testtruocthoinha.httpmethod.ExternalMethodTest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ABCSystemTest implements ExternalMethodTest {
 
-    @Value("${cleancode.bridepattern.ip:localhost}")
-    private String abcSysIp;
+    @Value("${abc.ip:localhost}")
+    private String hostName;
 
-    @Value("${cleancode.bridepattern.port:8082}")
-    private String abcSysPort;
+    @Value("${abc.port:8082}")
+    private String hostPort;
 
     @Override
     public String getConnectionErrorMessage() {
@@ -20,12 +21,12 @@ public class ABCSystemTest implements ExternalMethodTest {
     }
 
     @Override
-    public String getHostIp() {
-        return this.abcSysIp;
+    public String getHostName() {
+        return this.hostName;
     }
 
     @Override
     public String getHostPort() {
-        return this.abcSysPort;
+        return this.hostPort;
     }
 }
